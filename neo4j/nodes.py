@@ -10,7 +10,7 @@ cnt = 0
 key = ''
 record = None
 
-pbar = tqdm(total=10)
+pbar = tqdm(total=98613641)
 
 records = []
 ids = []
@@ -30,7 +30,6 @@ def save(record):
     else: return
     attrs = []
     for k, v in record.items():
-        if k == 'TYPE': continue
         one = "%s:%s" % (k, json.dumps("\t".join(v), ensure_ascii=False))
         attrs.append(one)
     cql = "(%s {%s})" % (t, ','.join(attrs))
